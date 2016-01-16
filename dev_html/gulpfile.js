@@ -66,7 +66,8 @@ gulp.task('clean', function(done) {
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 gulp.task('copy', function() {
   return gulp.src(PATHS.assets)
-    .pipe(gulp.dest('dist/assets'));
+    .pipe(gulp.dest('dist/assets'))
+	.pipe(gulp.dest('ee/public_html/assets'));
 });
 
 // Copy page templates into finished HTML files
@@ -119,7 +120,8 @@ gulp.task('sass', function() {
     .pipe(uncss)
     .pipe(minifycss)
     .pipe($.if(!isProduction, $.sourcemaps.write()))
-    .pipe(gulp.dest('dist/assets/css'));
+    .pipe(gulp.dest('dist/assets/css'))
+	.pipe(gulp.dest('ee/public_html/assets/css'));
 });
 
 // Combine JavaScript into one file
@@ -135,7 +137,8 @@ gulp.task('javascript', function() {
     .pipe($.concat('app.js'))
     .pipe(uglify)
     .pipe($.if(!isProduction, $.sourcemaps.write()))
-    .pipe(gulp.dest('dist/assets/js'));
+    .pipe(gulp.dest('dist/assets/js'))
+	.pipe(gulp.dest('ee/public_html/assets/js'));
 });
 
 // Copy images to the "dist" folder
@@ -147,7 +150,8 @@ gulp.task('images', function() {
 
   return gulp.src('src/assets/img/**/*')
     .pipe(imagemin)
-    .pipe(gulp.dest('dist/assets/img'));
+    .pipe(gulp.dest('dist/assets/img'))
+	.pipe(gulp.dest('ee/public_html/assets/img'));
 });
 
 // Build the "dist" folder by running all of the above tasks
