@@ -1,0 +1,1060 @@
+//------------------------------------
+// VERTICALLY CENTER TEXT 
+//------------------------------------
+.table {
+	display: table;
+	width: 100%;
+    height: 100%;
+
+	.cell {
+		display: table-cell;
+        vertical-align: middle;
+        &.top {
+            vertical-align: top;
+        }
+		&.bottom {
+            vertical-align: bottom;
+        }
+	}
+}
+
+//------------------------------------
+// HERO IMAGE
+//------------------------------------
+
+.hero {  
+    //background-color: $skyblue;
+	background-size:cover;
+    background-position:center 0rem;
+	margin-bottom: 0rem;
+    background-attachment:initial;
+    position: relative;
+    width: 100%;
+	
+	
+//    background-image: 		url(../img/site/overlay.png),
+//							url(../img/site/hero.jpg);
+//	background-repeat: 		repeat,
+//							no-repeat; 
+//	background-position: 	bottom right,
+//							center 0rem;
+//	background-size:		initial,
+//							cover;
+
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    top: 0;
+    left: 0;
+		
+		
+
+	.title {
+		position: relative;
+		top:20px;
+		text-align: center;	
+	}	
+	h1 {
+		color:$navy;
+		font-weight: 800;
+		font-size: 1.25rem;	
+		text-transform: uppercase;
+		letter-spacing: -1px;
+		display: inline-block;				
+		margin: 0;
+		padding: .5rem 1rem;
+		background: rgba(255, 255, 255, 0.85);
+		box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.20);
+		span {
+			//padding: 1rem;
+			//background: rgba(255, 255, 255, 0.63) !important;
+		}
+	}
+	h1.shadow-option {
+		text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+		color: $white;
+		display: block;
+		text-align: center;
+		padding: 0;
+		margin-top:3rem;
+		background: transparent;
+		box-shadow: none;
+	}
+    .container {
+        display: table;
+        width: 100%;
+        vertical-align: middle;
+        height: 400px;
+		min-height: 400px;
+    }
+	.ghost {
+		//background-color: rgba(255, 255, 255, 0.3) !important;
+		background-color: rgba(0, 0, 0, 0.3) !important;
+		&:hover {
+			//background-color: rgba(255, 255, 255, 0.75) !important;
+			background-color: rgba(255, 255, 255, 0.6) !important;
+		}
+	}
+	.cta {
+        display: table-cell;
+        text-align: center;
+        vertical-align: bottom;
+		position: relative;
+//		top: -3rem
+    }
+	@include breakpoint(medium) {
+//		background-position:center -2rem;
+//		margin-bottom: -2rem;
+		h1 {			
+//			top: 1rem;	
+			font-size: 2rem;
+		}
+		.container {
+            height: 500px;
+			min-height: 500px;
+        }
+		.cta {			
+//			top: -3rem
+		}
+	}
+    
+	@include breakpoint(large) {  
+//		background-position:center -4rem;
+//		margin-bottom: -4rem;
+		.title {
+			top:1.75rem;
+		}
+		h1 {			
+//			top: 0rem;
+			font-size: 2.5rem;
+		}		
+		.container {
+			height: 600px;
+			min-height: 600px;
+		}
+		.cta {			
+//			top: -5rem
+		}
+	}
+	@include breakpoint(xlarge){  	
+//		background-position:center -5rem;
+//		margin-bottom: -5rem;
+		.title {
+			top:3rem;
+		}
+		h1 {			
+			font-weight: 700;			
+//			top: 1rem;
+			font-size: 2.75rem;
+		}			
+		.container {
+			height: 700px;
+			min-height: 700px;
+		}
+		.cta {			
+//			top: -6rem
+		}
+	}
+    @include breakpoint(xxlarge) {   
+//		background-position:center -4rem;
+//		margin-bottom: -4rem;		
+		h1 {	
+//			top: 1rem;
+			font-size: 3.5rem;
+		}
+		.container {
+			height: 800px;
+			min-height: 800px;
+		}
+		.cta {			
+//			top: -7rem
+		}
+    }    
+}
+
+//------------------------------------
+// CUSTOM CALLOUTS
+//------------------------------------
+
+.custom.callout, .ba-profile.callout {
+	margin: 0;	
+	border: none;
+	border-radius: 0;
+}
+.custom.callout {
+	padding:3rem 0;	
+	&.pg-wrap {
+		padding: 4rem 0 2rem;
+	}
+}
+.ba-profile.callout{
+	//padding: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.custom.callout, .ba-profile.callout {
+	
+	&.white {
+		background: $white;
+	}
+	&.light-gray {
+		//background: $light-gray;
+		background: scale-color($light-gray, $lightness: 50%);  //#f3f3f3
+	}
+	&.navy {
+		background: $navy;
+	}
+	&.skyblue {
+		background: $skyblue;
+	}
+	&.paleblue {
+		background: $paleblue;
+	}
+	&.orange {
+		background: $orange;
+	}
+	&.search {
+		padding: 3rem 0;
+	}
+
+}
+
+
+@media #{$large-up} {
+	.custom.callout {		
+		padding:6rem 0;
+
+	}	
+}
+
+@media #{$large-up} {
+//	.custom.callout {
+//		padding:5rem 0;
+//
+//	}
+}
+
+
+//------------------------------------
+// BUTTONS
+//------------------------------------
+.search.button {
+	padding:  0.6em 1em;
+}
+.custom.button {	
+	//border-radius: $global-radius !important;	
+	font-size: rem-calc(20);	
+	-webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+	&.white {
+		background: $white;
+		&:hover {
+			background: darken( $white, 10% );
+		}
+	}	
+	&.skyblue {
+		background: $skyblue;
+		&:hover {
+			background: darken( $skyblue, 15% );
+		}
+	}
+	&.ghost {
+		@include ghost-button(Oswald, 12px, $white, 4px, $white, 4px, 300ms, $navy );
+		//font-weight: 700;
+		font-size: rem-calc(16);
+		text-transform: uppercase;
+		padding: .75rem 1rem;
+		margin-bottom: 1rem;
+		@media #{$medium-up} {
+			font-size: rem-calc(22);
+			border-width: 5px;
+			margin-bottom: 2rem;
+		}
+		@media #{$large-up} {
+			font-size: rem-calc(26);
+			border-width: 6px;
+		}
+		&:focus {
+			background-color: $white;
+			color: $navy;
+		}
+	}
+	&.ghost.navy {
+		@include ghost-button($body-font-family, 12px, $navy, 2px, $navy, 4px, 300ms, $navy );
+		font-weight: 700;
+		font-size: rem-calc(16);
+		text-transform: uppercase;
+		padding: .75rem 1rem;
+		margin: 0;
+		display: block;
+		&:hover {
+			color: $white;
+			background:rgba(27, 67, 93, 0.65);
+		}
+	}
+}
+
+
+//------------------------------------
+// SERACH
+//------------------------------------
+
+.callout {
+	.search {
+		h2 {
+			color: $white;
+			font-size: 2.4rem;
+			margin: 0 0 1rem 0;
+			line-height: 1.1;
+		}
+		input, .button, a, li {			
+			display: block;
+			width: 100%;
+			font-weight: 700;
+		}
+		input {
+			margin: 1rem 0;
+		}
+		li.has-submenu {
+			background: $skyblue;
+			border-radius: $global-radius;
+			a {
+				text-transform: uppercase;
+				font-weight: 700;
+			}
+			a:after {
+				right:20px !important;
+				top:.9rem !important;
+			}
+			.is-dropdown-submenu {
+				a {
+					text-transform: none;
+					font-weight: normal;
+				}
+				a:hover {
+					background: scale-color($skyblue, $lightness: 50%);
+				}
+			}
+			
+		}
+		@include breakpoint(large) { 
+			input, .button, a, li {
+				margin: 0;
+			}
+			h2 {				
+				margin: 0;				
+			}
+		}		
+	}
+}
+
+
+
+//------------------------------------
+// ATTORNEY PAGES
+//------------------------------------
+.ba-profile {
+	.large-8 {
+		//min-height: 450px;
+	}
+	
+	&.callout.white {
+		margin-bottom: 2rem;
+	}
+	&.btm-border {
+		border-bottom: 2px solid $navy;
+	}
+	h1 {
+		font-family: "Open Sans", sans-serif;
+		color:$navy;
+		font-size: 1.5rem;		
+		font-weight: 600;
+		text-align: center;		
+		letter-spacing: -1px;
+		line-height: 1;
+	}
+	.logo-name-url-wrap {
+		position: relative;
+	}
+	.photo-wrap {
+		div {
+			background-size:cover; 
+			background-position:center center; 
+			min-height:300px;
+				@include breakpoint(medium) { 
+					min-height:450px;
+			}
+		}		
+	}
+	.section-title {
+		font-family: "Open Sans", sans-serif;
+		font-size: 1rem;
+		font-weight: 600;
+		color: $white;
+		padding: .5rem 0;
+	}
+	.ba-logo {
+		text-align: center;
+		padding: 3rem 0 0 0;
+	}
+	.ba-name-url {
+		padding: 1rem 1rem 2rem 1rem;
+		position: relative;		
+		@include breakpoint(medium) { 
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+	}
+	.ba-name {
+		padding: 0 1rem;
+	}
+	.ba-url {
+		padding: 0 1rem;
+		text-align: center;
+		font-weight: 600;
+	}
+	.ba-photo {
+		width: 100%;
+		object-fit: cover;
+	}	
+	.ba-description {
+		padding: 2rem 1rem 1rem 1rem;
+		color: $navy;
+	}
+	.ba-contact-info {
+		padding: 2rem 1rem;
+		font-weight: 600;
+		overflow: hidden;
+		i {
+			font-size: 1.5rem;
+			position: relative;
+			top: 3px;			
+		}
+		a {
+			display: inline-block;
+			padding: .25rem 0;
+		}
+		.ba-url {
+			i {
+				font-weight: bold;
+			}
+			text-align: left;
+			padding: 0;
+		}
+	}
+	.ba-map {
+		img {
+			width: 100%;
+		}
+	}
+	.ba-address {
+		text-align: center;
+		font-weight: 600;
+		color: $navy;
+		padding: 1.5rem 1rem;
+	}
+	.ba-directions {
+		text-align: center;
+		a {
+			margin-bottom: 1.5rem
+		}
+	}
+	@include breakpoint(medium) {
+		h1 {
+			font-size: 2rem;
+		}
+	}
+}
+.ba-attorney-profile {	
+	margin-bottom:2rem;
+	&.btm-border {
+		border-bottom: 2px solid $navy;
+	}
+	.callout.white {
+		margin-bottom: 0;
+	}
+	h2 {
+		text-align: center;
+		margin-bottom: 1rem;
+		color: $navy;
+	}
+	h3 {
+		font-family: "Open Sans", sans-serif;
+		font-size: 2rem;
+		font-weight: 400;	
+		letter-spacing: -1px;
+		text-align: center;
+		color: $navy;
+		padding: 1.5rem 0;
+		margin: 0;
+	}
+	h4 {
+		font-family: "Open Sans", sans-serif;
+		font-size: 1.25rem;
+		font-weight: 600;	
+		letter-spacing: -1.5px;	
+		color: $navy;
+		margin: 0;
+		//padding: 1rem 0;
+	}
+	ul {
+		list-style-type: none;
+		color: $navy;
+		margin: 0;
+		li {
+			margin: .5rem 0;
+			line-height: 1.4;
+		}
+	}
+	.ba-photo {
+		img {
+			width: 100%;
+		}
+	}
+	.ba-name {
+		
+	}
+	.ba-bio {
+		padding: 0 1rem;
+	}
+	.ba-admissions, .ba-education, .ba-assoc-mem, .ba-languages {
+		padding: 1rem;
+	}
+	.ba-languages {
+		li {
+			display: inline-block;
+		}
+	}	
+}
+.ba-contact-attorney {
+	margin-bottom:2rem;
+	color: $navy;
+	&.btm-border {
+		border-bottom: 2px solid $navy;
+	}
+	.callout.white {
+		margin-bottom: 0;
+	}
+	.ba-contact {
+		padding: 1rem;
+	}
+	h3 {
+		font-family: "Open Sans", sans-serif;
+		font-size: 2rem;
+		font-weight: 400;	
+		letter-spacing: -1px;	
+		color: $navy;
+		margin: 0;
+		padding: 1rem 0;
+	}
+	p {
+		
+	}
+	form {
+		margin: 2rem 0 0 0;
+	}
+	textarea {
+		margin:1rem 0;
+	}
+}
+
+
+
+
+
+//------------------------------------
+// 3 COL GRID FAQ
+//------------------------------------
+.grid.faq {
+	.title {
+		position: relative;
+//		top:20px;
+		text-align: center;	
+	}
+	h2 {
+		text-transform: uppercase;
+		line-height: 1.2;
+		
+		// no box
+		color:$navy;
+		font-weight: 800;
+		font-size: 1.25rem;	
+		text-transform: uppercase;
+		letter-spacing: -1px;
+		display: inline-block;				
+		margin: 0;
+		padding: 1rem 1rem 4rem 1rem;
+		font-size:2.45098rem;
+
+		
+		// with box
+//		margin-bottom: 4rem;
+//		line-height: 1;
+//		background: $navy;
+//		box-shadow: 0px 0px 0px 3px $navy;
+//		display: inline-block;
+//		padding: 1rem;
+//		background: $navy;
+//		color: $white;
+//		border: 4px solid $white;
+	}
+}
+
+//------------------------------------
+// STEPS #70c6ff
+//------------------------------------
+
+.steps {
+	p {
+		color: $navy;
+		font-weight: 500;
+	}
+	ul {
+		margin: 2rem 0 0 0;
+	}	
+	li {
+		margin-bottom: 0;
+		border-radius: 0;
+		background: $paleblue;
+	}
+	li:nth-child(1) {
+		background: $paleblue;
+	}
+	li:nth-child(2) {
+		background: scale-color($paleblue, $lightness: -5%);
+	}
+	li:nth-child(3) {
+		background: scale-color($paleblue, $lightness: -10%);
+	}
+	li:nth-child(4) {
+		background: scale-color($paleblue, $lightness: -15%);
+	}
+	li:nth-child(5) {
+		background: scale-color($paleblue, $lightness: -20%);
+	}
+	li:nth-child(6) {
+		background: scale-color($paleblue, $lightness: -25%);
+		border-radius: $global-radius;
+	}
+	span:first-child {
+		font-size: 2rem;
+		font-weight: 800;
+		text-align: center;
+		color:scale-color($skyblue, $lightness: -30%);	
+		display: block;		
+		background: $white;	
+		margin: 0;
+		padding: 0;	
+		line-height:.75;
+	}
+	.step {
+		color: $navy;
+		text-align: center;
+		line-height: 1.2;
+		font-weight: 700;
+		font-size: 1.15rem;
+		padding: .5rem 1rem 1.5rem 1rem;
+		display: block;		
+	}
+	.number {
+		margin: 0 !important;
+		padding: 0 !important;
+		display: inline !important;
+		position: relative;
+		top:.6rem;
+		z-index: 9;
+		background-color: transparent !important;
+	}
+	@include breakpoint(350px) {		
+		.number {
+			top: 1.25rem;
+		}
+	}
+	@include breakpoint(medium) {
+		li {
+			margin-bottom: .5rem;
+			border-radius: $global-radius;
+		}
+		span:first-child {	
+			padding: .64rem .64rem .64rem 1rem;	
+			display: inline-block;
+			margin-right: 3rem;	
+			line-height: 1.5;
+		}
+		.step {
+			font-size: 1.15rem;
+			text-align: left;
+			padding: 0;
+			display: inline;
+			position: relative;
+			top: -4px;
+		}	
+		.number {			
+			top:0;
+		}
+	}
+	@include breakpoint(800px) {
+		.step {
+			font-size: 1.35rem;
+		}		
+	}	
+}
+.arrow_box {			
+	position: relative;
+	background: #ffffff;	
+	&:after {		
+		@include breakpoint(small) {
+			
+		}
+		@include breakpoint(medium) {
+			left:100%;
+			top: 50%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			border-top: 36px solid transparent;
+			border-bottom: 36px solid transparent;	
+			border-left: 36px solid $white;
+			margin-top: -36px;
+		}
+	}
+}
+.svg-triangle-down {
+	display: block;
+	position: relative;
+	top: -1px;
+}
+
+
+
+
+//------------------------------------
+// STEPS 2nd VERSION
+//------------------------------------
+
+.steps {
+	h2,h3 {
+		font-family: 'Open Sans Condensed', sans-serif;
+		text-transform: uppercase;
+		letter-spacing: -1px;
+		position: relative;
+		
+	}
+	h2 span:first-child {
+		color: $navy;
+		font-size: 2rem;
+		line-height: 1.1;
+		margin: 0;
+		padding: .5rem 1rem;
+		border-radius: $global-radius;
+		border: 1px solid $medium-gray;
+		position: relative;
+		z-index: 2;
+		
+	}
+	h2:after {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 0;
+		border-bottom: 1px solid $medium-gray;
+		left: 0;
+		top: 50%;
+		z-index: 1;
+	}
+	.grid {		
+		ul {
+			margin: 0;
+		}
+		li {
+			background: transparent;
+			text-align: center;
+			margin: 1.5rem 0;
+		}	
+		p {
+			margin-bottom: 0;
+		}
+		[class^="icon-"], [class*=" icon-"] {
+			font-size: 4rem;
+			line-height: 1.9;
+			color: $white;	
+			width: 130px;
+			height: 130px;
+			//padding: 1.5rem;
+			margin: 1rem 0;			
+			display: inline-block;
+			box-shadow: 0px 0px 0px 3px $navy;
+			background: $navy;
+			border-radius: 50%;
+			border: 4px solid $white;
+		}
+		.step-number {
+			font-family: 'Open Sans Condensed', sans-serif;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+			text-align: center;			
+			letter-spacing: -1px;
+			margin-bottom: .25rem;
+		}
+		.wrap {
+			background: $white;
+			padding: 2rem;
+			border-radius: $global-radius;
+			border: 1px solid $light-gray;
+			transition: background-color 0.25s ease-out, color 0.25s ease-out;
+			&:hover {
+				background:$navy;
+				box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.3);				
+				color: #fff;
+				border: 1px solid transparent;
+				[class^="icon-"], [class*=" icon-"] {
+					background: $white;
+					color: $navy;
+					box-shadow: 0px 0px 0px 3px $white;
+					border: 4px solid $navy;
+				}
+				p {
+					color: $white;
+				}
+				
+			}
+		}
+	}
+	@include breakpoint(medium) {
+		h2 span:first-child {			
+			font-size: 2.5rem;
+		}
+	}
+	
+}
+
+
+
+
+
+//------------------------------------
+// FAQ
+//------------------------------------
+.faq-wrap {
+	h1 {
+		color: $navy;
+	}
+	h2 {		
+		text-transform: uppercase;
+		color: $navy;
+	}
+	.faq, ul.faq {	
+		margin-bottom: 0;
+
+		h3 {
+			margin-bottom: 0;	
+			font-family: 'Open Sans', sans-serif;
+		}
+		li {
+			margin-bottom: 1.5rem;
+		}
+		a {
+			color: scale-color($paleblue, $lightness: 15%);
+			font-size: 1rem;
+			font-weight: 600;
+			padding: 1rem 1.5rem;
+			background: $skyblue;
+			display: block;
+			transition: background-color 0.25s ease-out, color 0.25s ease-out;
+			//border: 1px solid scale-color($skyblue, $lightness: -15%);
+			&:hover {
+				background:scale-color($skyblue, $lightness: -15%);
+			}
+			i {
+				font-size: 1.25rem;
+				position: relative;
+				top: 2px;
+			}
+		}	
+	}
+}
+.custom.callout.faq-search {
+	padding-left: 3rem;
+	padding-right: 3rem;
+}
+
+
+
+
+//----------------------------------------------------
+// CUSTOM GRID COLUMNS IMPLEMENTED USING LISTS <LI>
+// location: hm page 3 columns
+//-----------------------------------------------------
+.custom.grid {
+	h3 { 
+		text-align: center;
+	}
+	ul.row {
+		list-style-type: none;
+		li.column {
+		margin-bottom: 3rem;
+			&:last-child {
+				margin-bottom: 0;
+			}			
+		}	
+	}
+	@include breakpoint(large) {
+		h3 { 
+			text-align: left;
+		}
+		ul.row {
+			li.column {
+			margin-bottom: 0;	
+			padding-left: 2rem;
+    		padding-right: 2rem;
+			}	
+		}
+	}
+}
+
+
+
+
+
+//------------------------------------
+// PAID LISTINGS
+//------------------------------------
+.ba-wrap {
+	&.custom.callout {
+		padding-top: 0;
+	}
+}
+.com-ads {
+	text-align: center;
+	h3 {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+		font-size: 1.5rem;
+		letter-spacing: -1px;
+		span {
+			margin: 2rem 1rem;
+			display: inline-block
+		}
+		
+	}
+	.ba-attorney {
+		border: 1px solid $light-gray;
+		margin: 1.5rem 0;
+	}
+	.ba-logo {
+		padding: 4rem .5rem 0 .5rem;
+		@include breakpoint(medium) {
+			padding: 2rem .5rem 0 .5rem;
+		}
+	}
+	.ba-name {
+		background: $white;
+		color:$navy;		
+	}
+	.ba-contact-info {
+		background: $navy;
+		color: $white;
+		padding: 2.5rem 1rem 1rem 1rem;
+	}
+	.ba-url {
+		a {
+			display: block;
+			//font-size: ;
+			line-height: 2;
+			font-weight: 700;
+			background: $orange;
+			color:$white;
+			padding: .5rem;
+			border-top: 1px solid $medium-gray;
+			transition: background-color 0.25s ease-out, color 0.25s ease-out;
+			&:hover {
+				background: scale-color($orange, $lightness: -14%);
+			}
+		}
+		i {
+			font-size: 1.5rem;
+			position: relative;
+			top: 4px;
+		}
+	}
+}
+
+.basic-ads {
+	text-align: center;
+	color:scale-color($medium-gray, $lightness: -15%);
+	h3 {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+		font-size: 1.5rem;
+		letter-spacing: -1px;
+		span {
+			margin: 2rem 1rem .5rem 1rem;
+			display: inline-block
+		}
+		
+	}
+	.ba-attorney {
+		border: 1px solid $light-gray;
+		background: $white;
+		//color:$navy;
+		margin: 1.5rem 0;
+	}
+	.ba-name {
+		//background: $white;
+		//color:$navy;		
+	}
+	.ba-contact-info {
+		//background: $navy;
+		//color: $white;
+		padding: 1rem 1rem 2rem 1rem;
+	}	
+}
+
+
+//------------------------------------
+// ARROW DOWN BOX (white)
+//------------------------------------
+.arrow-box {
+	position: relative;
+	background: #ffffff;
+}
+.arrow-box:after {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #ffffff;
+	border-width: 27px;
+	margin-left: -27px;
+}
+
+
+
+//------------------------------------
+// FOOTER
+//------------------------------------
+footer {
+	background: scale-color($navy, $lightness: -42%);
+	color: $medium-gray;
+	font-size: 90%;
+	text-align: center;
+	padding: 1rem 0;
+	a, a:hover {
+		color:$medium-gray;
+	}
+	.copyright, a {
+		padding: .5rem;
+		line-height: 1.5;
+		display: inline-block;
+	}
+}
